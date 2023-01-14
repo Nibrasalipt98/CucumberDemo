@@ -16,19 +16,15 @@ public class LoginPage {
 	}
 	
 	@FindBy(id = "Email")
-	@CacheLookup
 	WebElement txtEmail;
 
 	@FindBy(id = "Password")
-	@CacheLookup
 	WebElement txtPassword;
 
-	@FindBy(xpath = "//input[@value='Log in']")
-	@CacheLookup
+	@FindBy(xpath = "//button")
 	WebElement btnLogin;
 
 	@FindBy(linkText = "Logout")
-	@CacheLookup
 	WebElement lnkLogout;
 	
 	

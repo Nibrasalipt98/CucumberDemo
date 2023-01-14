@@ -1,6 +1,7 @@
-pageObjects\AddcustomerPage.class
 pageObjects\LoginPage.class
 stepDefinitions\Stepdef.class
 pageObjects\SearchCustomerPage.class
 testRunner\TestRunner.class
 stepDefinitions\BaseClass.class
+pageObjects\AddcustomerPage.class
+testRunner\ReRunner.class

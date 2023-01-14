@@ -7,11 +7,12 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features=".//Features//",
+		features={".//Features//Feature1.feature",".//Features//Feature2.feature"},
 		glue="stepDefinitions",
+		dryRun=false,
 		monochrome=true,
-		tags= {"@sanity"},
-		plugin= {"pretty","html:test-output"}
+	//	tags="@regression",
+		plugin= {"pretty","html:test-output/report.html","rerun:failed_Scenario//failedScenario.txt"}
 		)
 public class TestRunner {
 

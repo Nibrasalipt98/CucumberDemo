@@ -13,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.*;
 import junit.framework.Assert;
@@ -22,6 +24,8 @@ import pageObjects.SearchCustomerPage;
 
 public class Stepdef extends BaseClass
 {
+	
+	Scenario sec;
 	@Before
 	public void setup() throws IOException
 	{
@@ -55,6 +59,11 @@ public class Stepdef extends BaseClass
 	
 	}
 	
+	@Before(order=1)
+	public void Setup(Scenario sc)
+	{
+		sec=sc;
+	}
 	
 	//Login steps....................
 	@Given("User Launch Chrome browser")
@@ -222,9 +231,15 @@ public class Stepdef extends BaseClass
 		}
 	
 	
-	
-	
-	
-	
-	
+		@Given("I open browser and navigate to {string}")
+		public void i_open_browser_and_navigate_to_google(String string)
+		{
+		driver.get(string);
+		sec.write("Opened the url with "+string);
+		}
+		@After
+		public void teraDown() 
+		{
+		driver.quit();
+		}
 }
