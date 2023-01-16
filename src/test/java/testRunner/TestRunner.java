@@ -7,12 +7,17 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features={".//Features//Feature1.feature",".//Features//Feature2.feature"},
+		//features={".//Features//Feature1.feature",".//Features//Feature2.feature"},
+	
+		features={".//Features//InputMethods.feature"},
 		glue="stepDefinitions",
-		dryRun=false,
+		dryRun=true,
 		monochrome=true,
-	//	tags="@regression",
-		plugin= {"pretty","html:test-output/report.html","rerun:failed_Scenario//failedScenario.txt"}
+	//	tags={"~@so","~@datatable"},		//Not
+	//	tags={"@so,@datatable"},             //OR
+//	    tags={"@so","@datatable"},             //And
+	//	tags={"@so","~@datatable"},		//So but not datable
+    	plugin= {"pretty","html:test-output/report.html","rerun:failed_Scenario//failedScenario.txt"}
 		)
 public class TestRunner {
 
