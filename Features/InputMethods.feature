@@ -3,12 +3,12 @@ Feature: Check the input methods in feature file
 
 
   Scenario: Title for scenario
-    Given I lauch the URL"https://phptravels.com/demo/"
+    Given I lauch the URL "https://phptravels.com/demo/"
     And input value to name as "NIBRAS"
   
 @so 
   Scenario Outline: Title for scenario outline
-    Given I lauch the URL"https://phptravels.com/demo/"
+    Given I lauch the URL "https://phptravels.com/demo/"
     When I want to write a step with "<firstname>"
     Then I check for the "<lastname>" in step
     And I verify the "<businessname>" in step
@@ -20,7 +20,7 @@ Feature: Check the input methods in feature file
 
   @datatable    
   Scenario: Using data table
-    Given I lauch the URL"https://phptravels.com/demo/"
+    Given I lauch the URL "https://phptravels.com/demo/"
  	  When  i fill the valid date in the fields with list of list
  	| Fields                 | Values              |
 	| First Name             | SARBIN              |

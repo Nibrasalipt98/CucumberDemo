@@ -9,18 +9,23 @@ import java.util.Properties;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.*;
+//import cucumber.api.Scenario;
+//import cucumber.api.java.After;
+//import cucumber.api.java.Before;
+//import cucumber.api.java.en.*;
 import io.cucumber.datatable.DataTable;
-import junit.framework.Assert;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.*;
+//import junit.framework.Assert;
 import pageObjects.AddcustomerPage;
 import pageObjects.LoginPage;
 import pageObjects.SearchCustomerPage;
@@ -231,10 +236,10 @@ public class Stepdef extends BaseClass {
 	@Given("I open browser and navigate to {string}")
 	public void i_open_browser_and_navigate_to_google(String string) {
 		driver.get(string);
-		sec.write("Opened the url with " + string);
+		//sec.write("Opened the url with " + string);
 	}
 
-	@Given("I lauch the URL{string}")
+	@Given("I lauch the URL {string}")
 	public void i_lauch_the_URL(String string) {
 		driver.get(string);
 	}
